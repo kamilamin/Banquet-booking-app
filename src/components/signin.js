@@ -25,14 +25,14 @@ class SignIn extends Component{
             }
         }
     }
-    // signIn(){
-    //     console.log('this.state', this.state);
-    //     const { email, password } = this.state;
-    //     firebaseApp.auth().signInWithEmailAndPassword(email, password)
-    //         .catch(error => {
-    //             this.setState({error})
-    //         })
-    // }
+    signIn(){
+        console.log('this.state', this.state);
+        const { email, password } = this.state;
+        firebaseApp.auth().signInWithEmailAndPassword(email, password)
+            .catch(error => {
+                this.setState({error})
+            })
+    }
     render(){
         return (
             <div style={{margin: '5%'}}>
@@ -45,7 +45,7 @@ class SignIn extends Component{
                     <input className='form-control' type="password" placeholder='Password' onChange={event => this.setState({password: event.target.value})} required />
                     <button className='btn btn-primary btn-block' type='button' onClick={ () => this.signIn() } style={{marginTop: '5px'}}>Sign In</button>
                     <div style={{marginTop: '5px'}}>
-                                
+                    <Link to='/signup'>Already have account</Link>
                     </div>
                 </div>
             </div>
